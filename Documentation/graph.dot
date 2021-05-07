@@ -1,0 +1,22 @@
+digraph G {
+  "Replacement words" -> "WordPiece tokenization" [style="dotted"]
+  "Original sentences" -> "Preprocess" [style="dashed"]
+  "Edited sentences" -> "Preprocess" 
+  
+  "Preprocess" -> "WordPiece tokenization" [style="dashed"]
+  "Preprocess" -> "WordPiece tokenization" 
+  
+  "WordPiece tokenization" -> "BERT model" [style="dotted"]
+  "WordPiece tokenization" -> "BERT model" [style="dashed"]
+  "WordPiece tokenization" -> "BERT model" 
+  
+  "BERT model" -> "Replacement word model" [style="dotted"]
+  "BERT model" -> "Original sentence model" [style="dashed"]
+  "BERT model" -> "Edited sentence model" 
+  
+  "Replacement word model" -> "DNN" [style="dotted"]
+  "Original sentence model" -> "DNN" [style="dashed"]
+   "Edited sentence model"-> "DNN" 
+  
+  "DNN" -> "Result" [style="bold"]
+}
